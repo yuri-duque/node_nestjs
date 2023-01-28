@@ -18,6 +18,17 @@ export class AccountResolver {
     }
   }
 
+  @Query(() => [AccountType])
+  async accounts() {
+    try {
+      const accounts = await this.accountService.getAccounts();
+
+      return accounts;
+    } catch (error) {
+      return error.message;
+    }
+  }
+
   @Mutation(() => AccountType)
   async createAccount(
     @Args('createAccountInput') createAccountInput: CreateAccountInput,

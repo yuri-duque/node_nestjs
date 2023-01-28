@@ -18,6 +18,10 @@ export class AccountService {
     });
   }
 
+  getAccounts() {
+    return this.accountRepository.find();
+  }
+
   createAccount(name: string) {
     const account = this.accountRepository.create({
       id: generateId(),
