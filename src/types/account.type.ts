@@ -1,11 +1,10 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
 import { IAccount } from 'src/interfaces/account.interface';
-import { ObjectID } from 'typeorm';
 
 @ObjectType('Account')
 export class AccountType implements IAccount {
-  @Field((type) => ID)
+  @Field(() => ID)
   id: any;
 
   @Field()
