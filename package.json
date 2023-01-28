@@ -22,15 +22,24 @@
   "dependencies": {
     "@nestjs/apollo": "^10.1.7",
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^10.1.7",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/typeorm": "^9.0.1",
+    "@types/moment": "^2.13.0",
+    "@types/mongodb": "^4.0.7",
+    "@types/uuid": "^9.0.0",
     "apollo-server-express": "^3.11.1",
     "graphql": "^16.6.0",
     "graphql-tools": "^8.3.14",
+    "moment": "^2.29.4",
+    "mongodb": "^4.13.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "typeorm": "^0.3.11",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
