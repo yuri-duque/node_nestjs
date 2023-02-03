@@ -1,9 +1,9 @@
 import { Column, Entity, ObjectIdColumn, PrimaryColumn } from 'typeorm';
 
-import { IAccount } from 'src/interfaces/account.interface';
+import { Account } from 'src/graphql/graphql.schema';
 
 @Entity()
-export class Account implements IAccount {
+export class AccountEntity implements Account {
   @ObjectIdColumn()
   _id: string;
 

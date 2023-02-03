@@ -1,12 +1,16 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './modules/app.module';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(3000);
-  console.log(`Application is running on: ${await app.getUrl()}`);
+
+  let appUrl = await app.getUrl();
+  appUrl = appUrl.replace('[::1]', 'localhost');
+
+  console.log(`Application is running on: ${appUrl}`);
 }
 bootstrap();

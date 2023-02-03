@@ -3,8 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import { Repository } from 'typeorm';
 
-import { Account } from 'src/entities/account.endity';
 import { generateId, generateIsoDate } from 'src/utils/mongo.utils';
+import { Account } from 'src/graphql/graphql.schema';
 
 @Injectable()
 export class AccountService {
