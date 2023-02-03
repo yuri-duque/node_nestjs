@@ -3,3 +3,8 @@ export interface IAccount {
   name: string;
   createDate: string;
 }
+
+export enum TypeAccount {
+  DEBIT = 'debit',
+  CREDT = 'credit',
+}

@@ -1,6 +1,7 @@
-import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { Field, ID, InputType, ObjectType } from '@nestjs/graphql';
+import { IsEnum, IsString, MinLength } from 'class-validator';
 
-import { IAccount } from './account.interface';
+import { IAccount, TypeAccount } from './account.interface';
 
 @ObjectType('Account')
 export class AccountType implements IAccount {
@@ -11,5 +12,20 @@ export class AccountType implements IAccount {
   name: string;
 
   @Field()
+  type: TypeAccount;
+
+  @Field()
   createDate: string;
+}
+
+@InputType()
+export class CreateAccountInput {
+  @MinLength(1)
+  @IsString()
+  @Field()
+  name: string;
+
+  @IsEnum(TypeAccount, { each: true })
+  @Field()
+  type: TypeAccount;
 }

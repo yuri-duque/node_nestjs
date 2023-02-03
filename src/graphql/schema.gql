@@ -6,14 +6,16 @@ type Account {
   createDate: String!
   id: ID!
   name: String!
+  type: String!
 }
 
-input CreateAccountDto {
+input CreateAccountInput {
   name: String!
+  type: String!
 }
 
 type Mutation {
-  createAccount(createAccountInput: CreateAccountDto!): Account!
+  createAccount(createAccountInput: CreateAccountInput!): Account!
 }
 
 type Query {

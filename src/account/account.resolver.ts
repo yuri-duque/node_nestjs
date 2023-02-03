@@ -1,7 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { AccountService } from './account.service';
-import { AccountType } from './account.type';
-import { CreateAccountDto } from './dto/account.dto';
+import { AccountType, CreateAccountInput } from './account.type';
 
 @Resolver(() => AccountType)
 export class AccountResolver {
@@ -31,7 +30,7 @@ export class AccountResolver {
 
   @Mutation(() => AccountType)
   async createAccount(
-    @Args('createAccountInput') createAccountInput: CreateAccountDto,
+    @Args('createAccountInput') createAccountInput: CreateAccountInput,
   ) {
     try {
       const { name } = createAccountInput;
