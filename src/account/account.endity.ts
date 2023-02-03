@@ -1,9 +1,9 @@
 import { Column, Entity, ObjectIdColumn, PrimaryColumn } from 'typeorm';
 
-import { IAccount } from 'src/interfaces/account.interface';
+import { IAccount } from './account.interface';
 
 @Entity()
-export class Account implements IAccount {
+export class AccountEntity implements IAccount {
   @ObjectIdColumn()
   _id: string;
 

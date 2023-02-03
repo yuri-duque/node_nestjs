@@ -3,13 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import { Repository } from 'typeorm';
 
-import { Account } from 'src/entities/account.endity';
+import { AccountEntity } from './account.endity';
 import { generateId, generateIsoDate } from 'src/utils/mongo.utils';
 
 @Injectable()
 export class AccountService {
   constructor(
-    @InjectRepository(Account) private accountRepository: Repository<Account>,
+    @InjectRepository(AccountEntity)
+    private accountRepository: Repository<AccountEntity>,
   ) {}
 
   getAccount(id: string) {

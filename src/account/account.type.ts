@@ -1,6 +1,6 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
-import { IAccount } from 'src/interfaces/account.interface';
+import { IAccount } from './account.interface';
 
 @ObjectType('Account')
 export class AccountType implements IAccount {
